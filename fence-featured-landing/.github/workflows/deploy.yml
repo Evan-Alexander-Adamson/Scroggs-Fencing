@@ -15,10 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -40,20 +37,18 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Prepare build directory
-        run: |
-          cd ..
-          mv fence-featured-landing/dist fence-featured-landing/out
-          ls -la fence-featured-landing/out
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: fence-featured-landing/out
-      
+          path: fence-featured-landing/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
