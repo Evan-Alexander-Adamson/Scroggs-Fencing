@@ -40,8 +40,14 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Verify build output
-        run: ls -la dist
+      - name: Debug - List workspace contents
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Parent directory contents:"
+          ls -la ..
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -49,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './fence-featured-landing/dist'
+          path: fence-featured-landing/dist
       
       - name: Deploy to GitHub Pages
         id: deployment
