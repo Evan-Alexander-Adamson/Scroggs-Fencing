@@ -29,13 +29,13 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: './fence-featured-landing/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
       
       - name: Install dependencies
-        run: cd fence-featured-landing && npm ci
+        run: npm ci
       
       - name: Build
-        run: cd fence-featured-landing && npm run build
+        run: npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './fence-featured-landing/dist'
+          path: 'dist'
       
       - name: Deploy to GitHub Pages
         id: deployment
