@@ -39,8 +39,15 @@ jobs:
       
       - name: Debug directory
         run: |
+          echo "Current directory:"
           pwd
+          echo "\nRoot directory contents:"
+          cd ../..
           ls -la
+          echo "\nfence-featured-landing contents:"
+          cd fence-featured-landing
+          ls -la
+          echo "\ndist directory contents:"
           ls -la dist
       
       - name: Upload artifact
