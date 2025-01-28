@@ -43,6 +43,26 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Add safe area insets for iOS */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Fix for iOS 100vh issue */
+  html {
+    height: -webkit-fill-available;
+  }
+
+  /* Add safe area padding to fixed position elements */
+  .fixed {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 }
 
