@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 // Import images directly
-import test1 from "../../../public/images/test1.png";
-import test2 from "../../../public/images/test2.png";
-import test3 from "../../../public/images/test3.png";
-import test4 from "../../../public/images/test4.png";
+import test1 from "/images/test1.png";
+import test2 from "/images/test2.png";
+import test3 from "/images/test3.png";
+import test4 from "/images/test4.png";
 
 const testimonials = [
   {
