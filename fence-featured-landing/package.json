@@ -1,8 +1,7 @@
 {
-  "name": "fence-featured-landing",
+  "name": "scroggs-fencing",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://evan-alexander-adamson.github.io/Scroggs-Fencing",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,66 +1,51 @@
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-
-// Import images directly
-import test1 from "/images/test1.png";
-import test2 from "/images/test2.png";
-import test3 from "/images/test3.png";
-import test4 from "/images/test4.png";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 const testimonials = [
   {
-    image: test1,
-    alt: "Testimonial from Kristi Waters"
+    quote:
+      "Scroggs Fencing did an amazing job with our ranch fencing. Their attention to detail and quality of work exceeded our expectations.",
+    name: "Robert Anderson",
+    designation: "Ranch Owner in Panhandle",
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3540&auto=format&fit=crop",
   },
   {
-    image: test2,
-    alt: "Testimonial from Belinda Perez"
+    quote:
+      "Professional, punctual, and perfect execution. They installed our privacy fence in record time and the craftsmanship is outstanding.",
+    name: "Maria Garcia",
+    designation: "Homeowner in Amarillo",
+    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3540&auto=format&fit=crop",
   },
   {
-    image: test3,
-    alt: "Testimonial from Harley Hedrick"
+    quote:
+      "Best fence contractor in the Panhandle area. Their team was courteous, efficient, and the final result is exactly what we wanted.",
+    name: "John Mitchell",
+    designation: "Commercial Property Manager",
+    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=3540&auto=format&fit=crop",
   },
   {
-    image: test4,
-    alt: "Testimonial from Wally Nunez"
-  }
+    quote:
+      "From initial consultation to final installation, Scroggs Fencing demonstrated exceptional professionalism and expertise.",
+    name: "Sarah Williams",
+    designation: "Local Business Owner",
+    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=3540&auto=format&fit=crop",
+  },
+  {
+    quote:
+      "The quality of materials and workmanship is outstanding. Our new fence has completely transformed our property's appearance.",
+    name: "David Thompson",
+    designation: "Residential Client",
+    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=3540&auto=format&fit=crop",
+  },
 ];
 
 export function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-        setIsAnimating(false);
-      }, 500);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="w-full bg-slate-900 py-12 sm:py-20">
-      <div className="w-full max-w-4xl mx-auto px-4">
-        <div className="relative overflow-hidden rounded-lg">
-          <div
-            className={cn(
-              "transition-opacity duration-500",
-              isAnimating ? "opacity-0" : "opacity-100"
-            )}
-          >
-            <div className="flex justify-center">
-              <img
-                src={testimonials[currentIndex].image}
-                alt={testimonials[currentIndex].alt}
-                className="w-full max-w-2xl rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
+    <section className="py-24 bg-muted/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-['Barlow_Semi_Condensed'] tracking-wide">
+          What Our Clients Say
+        </h2>
+        <AnimatedTestimonials testimonials={testimonials} />
       </div>
     </section>
   );
