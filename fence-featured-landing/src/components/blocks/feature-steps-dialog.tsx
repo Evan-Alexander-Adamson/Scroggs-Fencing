@@ -46,7 +46,7 @@ export function FeatureStepsDialog({ children }: FeatureStepsDialogProps) {
           features={projects}
           title="Our Recent Projects"
           autoPlayInterval={6000}
-          imageHeight="h-[240px] sm:h-[400px] lg:h-[500px]"
+          imageHeight="h-[240px] sm:h-[400px] md:h-[500px] lg:h-[750px]"
         />
       </DialogContent>
     </Dialog>
