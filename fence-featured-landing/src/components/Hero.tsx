@@ -35,7 +35,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center overflow-hidden">
+    <div className="relative min-h-[100dvh] flex items-center overflow-hidden">
       {/* Animated Sky Background */}
       <div className="hero-sky animate-clouds" />
       
@@ -46,7 +46,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-32">
         {!showContact ? (
           <>
             <BlurFade>
@@ -82,30 +82,30 @@ const Hero = () => {
             </BlurFade>
           </>
         ) : (
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-8 md:p-12">
+          <div className="w-full max-w-lg mx-auto px-4">
+            <div className="bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-6 sm:p-8">
               <BlurFade>
-                <h2 className="font-['Barlow_Semi_Condensed'] text-4xl md:text-5xl font-bold tracking-tight text-white uppercase drop-shadow-lg mb-12">
+                <h2 className="font-['Barlow_Semi_Condensed'] text-3xl sm:text-4xl font-bold tracking-tight text-white uppercase drop-shadow-lg mb-8 text-center">
                   Contact Us
                 </h2>
               </BlurFade>
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <BlurFade delay={0.5}>
-                  <div className="flex items-center justify-center space-x-4 text-white">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white">
                     <div className="bg-amber-500 text-slate-900 p-3 rounded-full">
                       <Phone className="w-6 h-6" />
                     </div>
-                    <a href="tel:+1-806-555-0123" className="font-['Barlow_Semi_Condensed'] text-2xl hover:text-amber-500 transition-colors">
+                    <a href="tel:+1-806-555-0123" className="font-['Barlow_Semi_Condensed'] text-xl sm:text-2xl hover:text-amber-500 transition-colors">
                       (806) 555-0123
                     </a>
                   </div>
                 </BlurFade>
                 <BlurFade delay={0.75}>
-                  <div className="flex items-center justify-center space-x-4 text-white">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-white">
                     <div className="bg-amber-500 text-slate-900 p-3 rounded-full">
                       <Mail className="w-6 h-6" />
                     </div>
-                    <a href="mailto:scroggsfencing@yahoo.com" className="font-['Barlow_Semi_Condensed'] text-2xl hover:text-amber-500 transition-colors">
+                    <a href="mailto:scroggsfencing@yahoo.com" className="font-['Barlow_Semi_Condensed'] text-xl sm:text-2xl hover:text-amber-500 transition-colors break-all">
                       scroggsfencing@yahoo.com
                     </a>
                   </div>
