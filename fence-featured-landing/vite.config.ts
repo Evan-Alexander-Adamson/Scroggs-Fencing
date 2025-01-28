@@ -34,6 +34,19 @@ export default defineConfig(({ mode }) => {
       outDir: "dist",
       assetsDir: "assets",
       emptyOutDir: true,
+      assetsInlineLimit: 0,
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+            let extType = assetInfo.name.split('.')[1];
+            if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+              extType = 'img';
+            }
+            return `assets/${extType}/[name]-[hash][extname]`;
+          },
+        },
+      },
     },
   };
 });

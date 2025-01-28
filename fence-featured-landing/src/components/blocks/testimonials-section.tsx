@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
+// Import images directly
+import test1 from "../../../public/images/test1.png";
+import test2 from "../../../public/images/test2.png";
+import test3 from "../../../public/images/test3.png";
+import test4 from "../../../public/images/test4.png";
+
 const testimonials = [
   {
-    image: "images/test1.png",
+    image: test1,
     alt: "Testimonial from Kristi Waters"
   },
   {
-    image: "images/test2.png",
+    image: test2,
     alt: "Testimonial from Belinda Perez"
   },
   {
-    image: "images/test3.png",
+    image: test3,
     alt: "Testimonial from Harley Hedrick"
   },
   {
-    image: "images/test4.png",
+    image: test4,
     alt: "Testimonial from Wally Nunez"
   }
 ];
@@ -48,7 +54,7 @@ export function TestimonialsSection() {
           >
             <div className="flex justify-center">
               <img
-                src={`${import.meta.env.BASE_URL}${testimonials[currentIndex].image}`}
+                src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].alt}
                 className="w-full max-w-2xl rounded-lg shadow-xl"
               />
