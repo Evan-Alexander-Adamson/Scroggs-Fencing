@@ -115,20 +115,20 @@ export function QuoteForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-8">
+    <div className="w-full max-w-md mx-auto bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-4 sm:p-8">
       {/* Close Button */}
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-4 text-white hover:bg-white/10"
+        className="absolute right-2 top-2 sm:right-4 sm:top-4 text-white hover:bg-white/10"
         onClick={handleClose}
       >
         <X className="h-5 w-5" />
       </Button>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
         <div className="space-y-2 text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white font-['Barlow_Semi_Condensed']">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-['Barlow_Semi_Condensed']">
             Request a Free Quote
           </h1>
           <p className="text-white/80 text-sm">
