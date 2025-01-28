@@ -3,19 +3,19 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    image: "./images/test1.png",
+    image: "images/test1.png",
     alt: "Testimonial from Kristi Waters"
   },
   {
-    image: "./images/test2.png",
+    image: "images/test2.png",
     alt: "Testimonial from Belinda Perez"
   },
   {
-    image: "./images/test3.png",
+    image: "images/test3.png",
     alt: "Testimonial from Harley Hedrick"
   },
   {
-    image: "./images/test4.png",
+    image: "images/test4.png",
     alt: "Testimonial from Wally Nunez"
   }
 ];
