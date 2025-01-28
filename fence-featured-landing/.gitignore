@@ -52,3 +52,13 @@ dist-ssr
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Environment files
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
