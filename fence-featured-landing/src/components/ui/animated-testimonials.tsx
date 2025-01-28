@@ -5,7 +5,6 @@ interface Testimonial {
   quote: string;
   name: string;
   designation: string;
-  src: string;
 }
 
 interface AnimatedTestimonialsProps {
@@ -41,19 +40,12 @@ export function AnimatedTestimonials({ testimonials }: AnimatedTestimonialsProps
             <p className="text-xl md:text-2xl font-medium text-foreground mb-8">
               "{testimonials[currentIndex].quote}"
             </p>
-            <div className="flex items-center justify-center space-x-4">
-              <img
-                src={testimonials[currentIndex].src}
-                alt={testimonials[currentIndex].name}
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div className="text-left">
-                <div className="font-semibold text-foreground">
-                  {testimonials[currentIndex].name}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {testimonials[currentIndex].designation}
-                </div>
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <div className="font-semibold text-foreground">
+                {testimonials[currentIndex].name}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {testimonials[currentIndex].designation}
               </div>
             </div>
           </blockquote>
