@@ -34,34 +34,34 @@ export function FeatureSteps({
   }, [features.length, autoPlayInterval])
 
   return (
-    <div className="relative overflow-hidden bg-slate-900 py-4 sm:py-6 rounded-lg">
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="mx-auto max-w-2xl text-center mb-4 sm:mb-6">
-          <h2 className="text-xl sm:text-3xl font-bold tracking-tight text-white font-['Barlow_Semi_Condensed']">
+    <div className="relative overflow-hidden bg-slate-900 py-3 sm:py-5 rounded-lg">
+      <div className="mx-auto max-w-2xl px-3">
+        <div className="mx-auto max-w-2xl text-center mb-3 sm:mb-5">
+          <h2 className="text-lg sm:text-2xl font-bold tracking-tight text-white font-['Barlow_Semi_Condensed']">
             {title}
           </h2>
         </div>
         <div className="mx-auto">
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
             {/* Project Info */}
-            <div className="flex flex-col gap-2 sm:gap-4">
+            <div className="flex flex-col gap-2">
               {features.map((feature, index) => (
                 <div
                   key={feature.step}
                   className={cn(
-                    "relative cursor-pointer rounded-xl p-3 sm:p-4 transition-all duration-300 border",
+                    "relative cursor-pointer rounded-lg p-2 sm:p-3 transition-all duration-300 border",
                     activeStep === index
                       ? "bg-amber-500 text-slate-900 border-amber-400 scale-[1.02]"
                       : "hover:bg-white/5 text-white border-white/10"
                   )}
                   onClick={() => setActiveStep(index)}
                 >
-                  <div className="flex items-center gap-2 sm:gap-4">
+                  <div className="flex items-center gap-2">
                     <span className="text-xs sm:text-sm font-medium font-['Barlow_Semi_Condensed']">{feature.step}</span>
                     <div className="h-px flex-1 bg-current opacity-20" />
                   </div>
-                  <h3 className="mt-2 text-base sm:text-lg font-bold font-['Barlow_Semi_Condensed']">{feature.title}</h3>
-                  <p className="mt-1 text-xs sm:text-sm opacity-90 font-['Barlow_Semi_Condensed']">{feature.content}</p>
+                  <h3 className="mt-1.5 text-sm sm:text-base font-bold font-['Barlow_Semi_Condensed']">{feature.title}</h3>
+                  <p className="mt-0.5 text-xs opacity-90 font-['Barlow_Semi_Condensed']">{feature.content}</p>
                 </div>
               ))}
             </div>
@@ -78,7 +78,7 @@ export function FeatureSteps({
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="max-w-full h-full rounded-xl shadow-xl object-cover"
+                    className="max-w-full h-full rounded-lg shadow-xl object-cover"
                   />
                 </div>
               ))}
