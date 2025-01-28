@@ -3,8 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with the public key
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 export function QuoteForm() {
   const [formData, setFormData] = useState({
@@ -14,6 +17,17 @@ export function QuoteForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Log environment variables in development
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      console.log('EmailJS Config:', {
+        serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      });
+    }
+  }, []);
 
   const handleClose = () => {
     window.location.hash = '';
@@ -93,15 +107,21 @@ export function QuoteForm() {
     setSubmitStatus('idle');
 
     try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+      if (!serviceId || !templateId) {
+        throw new Error('EmailJS configuration is missing');
+      }
+
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           customer_name: formData.name,
           customer_phone: formData.phone,
           project_details: formData.project,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        }
       );
 
       setSubmitStatus('success');
