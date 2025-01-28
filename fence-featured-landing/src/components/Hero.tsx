@@ -54,13 +54,15 @@ const Hero = () => {
         {!showContact ? (
           <>
             <BlurFade>
-              <div className="space-y-2">
+              <div className="space-y-2 text-center">
                 <h1 className="font-['Barlow_Semi_Condensed'] text-5xl md:text-7xl font-bold tracking-tight mb-2 text-white uppercase drop-shadow-lg">
                   Panhandle's Premier
                 </h1>
-                <h1 className="font-['Barlow_Semi_Condensed'] text-4xl md:text-6xl font-semibold tracking-wider text-amber-500 uppercase border-t-4 border-amber-500 pt-2 inline-block drop-shadow-md bg-slate-900/50 px-4 py-1 rounded-sm">
-                  Fencing Contractor
-                </h1>
+                <div className="flex justify-center">
+                  <h1 className="font-['Barlow_Semi_Condensed'] text-4xl md:text-6xl font-semibold tracking-wider text-amber-500 uppercase border-t-4 border-amber-500 pt-2 inline-block drop-shadow-md bg-slate-900/50 px-4 py-1 rounded-sm">
+                    Fencing Contractor
+                  </h1>
+                </div>
               </div>
             </BlurFade>
             <BlurFade delay={0.5}>
