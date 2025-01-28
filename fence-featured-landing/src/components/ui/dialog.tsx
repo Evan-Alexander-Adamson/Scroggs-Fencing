@@ -38,17 +38,18 @@ const DialogContent = React.forwardRef<
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
-          "z-50 relative grid w-full max-w-lg gap-4 border bg-background",
-          "shadow-lg duration-200",
+          "z-50 relative grid w-full sm:w-auto",
+          "max-w-[90vw] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl",
+          "gap-4 border bg-background shadow-lg duration-200",
           "data-[state=open]:animate-in data-[state=closed]:animate-out",
           "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
           "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
           "sm:rounded-lg",
-          "h-[calc(100vh-env(safe-area-inset-top)-env(safe-area-inset-bottom)-2rem)]",
+          "h-[calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 2rem)]",
           "sm:h-auto",
           "overflow-y-auto",
-          "p-6 pt-12 sm:pt-6", // Extra top padding on mobile for close button
-          "mx-4 sm:mx-auto", // Horizontal margins on mobile
+          "p-6 pt-12 sm:pt-6",
+          "mx-4 sm:mx-auto",
           className
         )}
         {...props}

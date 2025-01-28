@@ -39,14 +39,14 @@ export function FeatureStepsDialog({ children }: FeatureStepsDialogProps) {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-4xl p-0 bg-transparent border-0 sm:scale-100 scale-[0.8]">
+      <DialogContent className="!p-0 !bg-transparent !border-0 !max-w-[95vw] sm:!max-w-2xl md:!max-w-3xl lg:!max-w-4xl xl:!max-w-5xl">
         <DialogTitle className="sr-only">Our Recent Projects</DialogTitle>
         <DialogDescription className="sr-only">View our recent fencing projects and installations</DialogDescription>
         <FeatureSteps 
           features={projects}
           title="Our Recent Projects"
           autoPlayInterval={6000}
-          imageHeight="h-[240px] sm:h-[450px]"
+          imageHeight="h-[240px] sm:h-[400px] lg:h-[500px]"
         />
       </DialogContent>
     </Dialog>
