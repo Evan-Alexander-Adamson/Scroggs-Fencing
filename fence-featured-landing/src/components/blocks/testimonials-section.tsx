@@ -3,19 +3,19 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    image: "/Scroggs-Fencing/images/test1.png",
+    image: "images/test1.png",
     alt: "Testimonial from Kristi Waters"
   },
   {
-    image: "/Scroggs-Fencing/images/test2.png",
+    image: "images/test2.png",
     alt: "Testimonial from Belinda Perez"
   },
   {
-    image: "/Scroggs-Fencing/images/test3.png",
+    image: "images/test3.png",
     alt: "Testimonial from Harley Hedrick"
   },
   {
-    image: "/Scroggs-Fencing/images/test4.png",
+    image: "images/test4.png",
     alt: "Testimonial from Wally Nunez"
   }
 ];
@@ -48,7 +48,7 @@ export function TestimonialsSection() {
           >
             <div className="flex justify-center">
               <img
-                src={testimonials[currentIndex].image}
+                src={`${import.meta.env.BASE_URL}${testimonials[currentIndex].image}`}
                 alt={testimonials[currentIndex].alt}
                 className="w-full max-w-2xl rounded-lg shadow-xl"
               />
