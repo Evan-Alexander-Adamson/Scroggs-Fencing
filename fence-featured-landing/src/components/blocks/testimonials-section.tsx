@@ -3,15 +3,15 @@ import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 const testimonials = [
   {
     quote:
-      "Scroggs Fencing did an amazing job with our ranch fencing. Their attention to detail and quality of work exceeded our expectations.",
-    name: "Robert Anderson",
-    designation: "Ranch Owner in Panhandle"
+      "Thank you for your amazing hard work. We ABSOLUTLEY LOVE IT. It is beautiful.",
+    name: "Kristi W",
+    designation: "Home Owner in Amarillo"
   },
   {
     quote:
-      "Professional, punctual, and perfect execution. They installed our privacy fence in record time and the craftsmanship is outstanding.",
-    name: "Maria Garcia",
-    designation: "Homeowner in Amarillo"
+      "We absolutely love our new fence! If you are looking for someone to build or replace your fence, I highly recommend Scroggs Fencing. David is a perfectionist! You won't be disappointed.",
+    name: "Belinda P",
+    designation: "Homeowner in Panhandle"
   },
   {
     quote:
@@ -21,14 +21,14 @@ const testimonials = [
   },
   {
     quote:
-      "From initial consultation to final installation, Scroggs Fencing demonstrated exceptional professionalism and expertise.",
-    name: "Sarah Williams",
+      "Awesome job, I highly recommend. You are always there when you say you are going to be there and you do things right the first time. Thanks again.",
+    name: "Harley H",
     designation: "Local Business Owner"
   },
   {
     quote:
-      "The quality of materials and workmanship is outstanding. Our new fence has completely transformed our property's appearance.",
-    name: "David Thompson",
+      "David built us a high quality, beautiful fence. I would highly recommend him.",
+    name: "Wally N",
     designation: "Residential Client"
   }
 ];
