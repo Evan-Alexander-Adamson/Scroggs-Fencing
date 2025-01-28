@@ -29,8 +29,6 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']">Services</a>
-            <a href="#about" className="text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']">About</a>
             <a href="#contact" className="text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']">Contact</a>
           </div>
 
@@ -50,20 +48,6 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#services"
-                className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </a>
-              <a
-                href="#about"
-                className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </a>
               <a
                 href="#contact"
                 className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
