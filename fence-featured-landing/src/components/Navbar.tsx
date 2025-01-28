@@ -1,9 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav className="fixed w-full z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -39,18 +53,21 @@ const Navbar = () => {
               <a
                 href="#services"
                 className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
               <a
                 href="#about"
                 className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
+                onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a
                 href="#contact"
                 className="block px-3 py-2 text-foreground/80 hover:text-foreground font-['Barlow_Semi_Condensed']"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
