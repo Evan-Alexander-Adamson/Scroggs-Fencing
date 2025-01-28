@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { FeatureStepsDialog } from "./blocks/feature-steps-dialog";
 import { useState, useEffect } from "react";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, X } from "lucide-react";
 import { QuoteFormSection } from "./blocks/quote-form-section";
 
 const Hero = () => {
@@ -29,6 +29,10 @@ const Hero = () => {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  const handleClose = () => {
+    window.location.hash = '';
+  };
 
   if (showQuoteForm) {
     return <QuoteFormSection />;
@@ -83,7 +87,17 @@ const Hero = () => {
           </>
         ) : (
           <div className="w-full max-w-lg mx-auto px-4">
-            <div className="bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-6 sm:p-8">
+            <div className="relative bg-slate-900/70 backdrop-blur-sm rounded-lg border border-white/10 shadow-xl p-6 sm:p-8">
+              {/* Close Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-2 top-2 sm:right-4 sm:top-4 text-white hover:bg-white/10"
+                onClick={handleClose}
+              >
+                <X className="h-5 w-5" />
+              </Button>
+
               <BlurFade>
                 <h2 className="font-['Barlow_Semi_Condensed'] text-3xl sm:text-4xl font-bold tracking-tight text-white uppercase drop-shadow-lg mb-8 text-center">
                   Contact Us
