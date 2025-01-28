@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface Testimonial {
-  quote: string;
-  name: string;
-  designation: string;
-  src: string;
+  image: string;
 }
 
 interface AnimatedTestimonialsProps {
@@ -29,34 +26,21 @@ export function AnimatedTestimonials({ testimonials }: AnimatedTestimonialsProps
   }, [testimonials.length]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-12">
-      <div className="relative overflow-hidden rounded-lg bg-background p-8">
+    <div className="w-full max-w-5xl mx-auto px-4">
+      <div className="relative overflow-hidden rounded-lg">
         <div
           className={cn(
             "transition-opacity duration-500",
             isAnimating ? "opacity-0" : "opacity-100"
           )}
         >
-          <blockquote className="text-center">
-            <p className="text-xl md:text-2xl font-medium text-foreground mb-8">
-              "{testimonials[currentIndex].quote}"
-            </p>
-            <div className="flex items-center justify-center space-x-4">
-              <img
-                src={testimonials[currentIndex].src}
-                alt={testimonials[currentIndex].name}
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div className="text-left">
-                <div className="font-semibold text-foreground">
-                  {testimonials[currentIndex].name}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {testimonials[currentIndex].designation}
-                </div>
-              </div>
-            </div>
-          </blockquote>
+          <div className="flex items-center justify-center">
+            <img
+              src={testimonials[currentIndex].image}
+              alt="Client Testimonial"
+              className="w-full h-auto rounded-lg shadow-xl"
+            />
+          </div>
         </div>
       </div>
     </div>
