@@ -4,6 +4,7 @@ import path from "path";
 import { securityHeadersPlugin } from "./src/security/vite-security-headers";
 
 // https://vitejs.dev/config/
+// Configured for GitHub Pages deployment at scroggsfencing.github.io/Homepage
 export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
   const env = loadEnv(mode, process.cwd(), '');
